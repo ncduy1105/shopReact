@@ -2,7 +2,12 @@ import React, { useContext } from "react";
 import { BsEyeFill, BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const Product = ({ id, image, category, title, price }) => {
+import { CartContext } from "../contexts/CartContext";
+
+const Product = ({ product }) => {
+  const { id, image, category, title, price } = product;
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div>
       {/* image | popup menu | add to cart */}
@@ -17,7 +22,7 @@ const Product = ({ id, image, category, title, price }) => {
           </div>
         </div>
         <div className="absolute top-6 -right-11 flex flex-col items-center justify-center gap-y-2 p-2 opacity-0 transition-all duration-300 group-hover:right-5 group-hover:opacity-100">
-          <button>
+          <button onClick={() => addToCart(product, id)}>
             <div className="flex h-12 w-12 items-center justify-center bg-red-500 text-white">
               <BsPlus className="text-3xl" />
             </div>
@@ -30,7 +35,6 @@ const Product = ({ id, image, category, title, price }) => {
           </Link>
         </div>
       </div>
-      {/* image | popup menu | add to cart */}
       {/* category | title | price */}
       <div>
         <div className="mb-1 text-sm capitalize text-gray-500">{category}</div>
@@ -39,7 +43,6 @@ const Product = ({ id, image, category, title, price }) => {
         </Link>
         <div className="font-semibold">$ {price.toFixed(2)}</div>
       </div>
-      {/* category | title | price */}
     </div>
   );
 };
