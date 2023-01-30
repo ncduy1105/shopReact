@@ -9,12 +9,12 @@ import { SidebarContext } from "../contexts/SidebarContext";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
   return (
     <div
       className={`${
         isOpen ? "right-0" : "-right-full"
-      } x-20 fixed top-0 h-full w-full bg-white px-4 shadow-2xl transition-all duration-[350ms] ease-in-out md:w-[35vw] lg:px-[35px] xl:max-w-[30vw] 3xl:max-w-[25vw]`}
+      } fixed top-0 z-20 h-full w-full bg-white px-4 shadow-2xl transition-all duration-[350ms] ease-in-out md:w-[50vw] lg:max-w-[50vw] lg:px-[35px] xl:max-w-[38vw] 3xl:max-w-[28vw]`}
     >
       <div className="flex items-center justify-between border-b py-8">
         <div className="text-sm font-semibold uppercase">Shopping Bag(0)</div>
@@ -29,6 +29,21 @@ const Sidebar = () => {
         {cart.map((item) => {
           return <CartItem item={item} key={item.id} />;
         })}
+      </div>
+      <div className="mt-4 flex flex-col gap-y-3 py-4">
+        <div className="flex w-full items-center justify-between ">
+          {/* total */}
+          <div className="font-semibold uppercase">
+            <span className="mr-2">Total: </span>$ 1000
+          </div>
+          {/* clear cart icon */}
+          <button
+            onClick={clearCart}
+            className="flex h-12 w-12 items-center justify-center bg-red-500 py-4 text-xl text-white"
+          >
+            <FiTrash2 />
+          </button>
+        </div>
       </div>
     </div>
   );
