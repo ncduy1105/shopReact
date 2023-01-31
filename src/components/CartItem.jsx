@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
           <img className="max-w-[80px]" src={image} alt={title} />
         </Link>
         <div className="flex w-full flex-col">
-          {/* title and remove icoon */}
+          {/* title and remove icon */}
           <div className="mb-2 flex items-center justify-between">
             {/* title */}
             <Link
@@ -32,33 +32,29 @@ const CartItem = ({ item }) => {
               <IoMdClose className="text-gray-500 transition hover:text-red-500" />
             </button>
           </div>
-          <div className="flex h-[36px] gap-x-2 text-sm">
+          <div className="flex h-[36px] items-center justify-between gap-x-2 text-sm">
             {/* qty */}
-            <div className="flex h-full max-w-[100px] flex-1 items-center border font-medium text-primary">
+            <div className="flex h-full max-w-[100px] flex-1 items-center justify-around border font-medium text-primary">
               {/* decrease amount */}
               <button
+                className="h-full flex-1"
                 onClick={() => decreaseAmount(id)}
-                className="flex h-full flex-1 items-center justify-center"
               >
-                <IoMdRemove />
+                <IoMdRemove className="mx-auto" />
               </button>
-              <div className="flex h-full items-center justify-center px-2">
-                {amount}
-              </div>
+              <div className="flex-1 text-center">{amount}</div>
               {/* increase amount */}
               <button
+                className="h-full flex-1"
                 onClick={() => addToCart(item, id)}
-                className="flex h-full flex-1 items-center justify-center"
               >
-                <IoMdAdd />
+                <IoMdAdd className="mx-auto" />
               </button>
             </div>
             {/* price */}
-            <div className="flex flex-1 items-center justify-around">
-              $ {price.toFixed(2)}
-            </div>
+            <div className="flex-1 text-center">$ {price.toFixed(2)}</div>
             {/* final price */}
-            <div className="flex flex-1 items-center justify-end font-medium text-primary">{`$ ${(
+            <div className="flex-1 text-end font-medium text-primary">{`$ ${(
               price * amount
             ).toFixed(2)}`}</div>
           </div>
