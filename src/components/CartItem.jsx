@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
   const { removeFromCart, addToCart, decreaseAmount } = useContext(CartContext);
 
   return (
-    <div className="flex w-full gap-x-4 border-b border-gray-200 py-2 font-light text-gray-500 lg:px-6">
+    <div className="flex w-full gap-x-4 border-b border-gray-200 py-2 font-light text-gray-500 last:border-none lg:px-6">
       <div className="flex min-h-[150px] w-full items-center gap-x-4">
         {/* image */}
         <Link to={`/product/${id}`}>
