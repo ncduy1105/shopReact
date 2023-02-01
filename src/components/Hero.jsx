@@ -26,8 +26,8 @@ const Hero = () => {
           </Link>
         </div>
         {/* img */}
-        <div className="absolute bottom-0 right-[5vw] 3xl:right-[15vw]">
-          <img className="" src={woman} alt="" />
+        <div className="absolute bottom-0 right-0 xl:right-[10%]">
+          <img className="" src={woman} alt="woman holding flowers" />
         </div>
       </div>
     </section>

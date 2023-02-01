@@ -15,13 +15,13 @@ const Product = ({ product }) => {
         <div className="flex h-full w-full items-center justify-center">
           <div className="mx-auto flex w-[200px] items-center justify-center">
             <img
-              className="max-h-[160px] transition duration-300 group-hover:scale-110"
+              className="max-h-[160px] transition duration-300 group-[&:hover]:scale-110"
               src={image}
               alt={title}
             />
           </div>
         </div>
-        <div className="absolute top-6 -right-11 flex flex-col items-center justify-center gap-y-2 p-2 opacity-0 transition-all duration-300 group-hover:right-5 group-hover:opacity-100">
+        <div className="absolute top-6 -right-11 flex flex-col items-center justify-center gap-y-2 p-2 opacity-0 transition-all duration-300 group-[&:hover]:right-5 group-[&:hover]:opacity-100">
           <button onClick={() => addToCart(product, id)}>
             <div className="flex h-12 w-12 items-center justify-center bg-red-500 text-white">
               <BsPlus className="text-3xl" />
