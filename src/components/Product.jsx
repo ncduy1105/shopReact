@@ -9,7 +9,7 @@ const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div>
+    <div className="animate-fadeIn">
       {/* image | popup menu | add to cart */}
       <div className="group relative mb-4 h-[300px] overflow-hidden border border-[#e4e4e4] transition">
         <div className="flex h-full w-full items-center justify-center">

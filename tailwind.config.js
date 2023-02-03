@@ -28,6 +28,15 @@ module.exports = {
       backgroundImage: {
         hero: "url('./img/bg_hero.svg')",
       },
+      animation: {
+        fadeIn: "fadeIn 500ms ease 1",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [],
