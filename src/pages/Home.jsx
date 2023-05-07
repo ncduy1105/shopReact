@@ -30,6 +30,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+<h1>hello</h1>
   );
 };
 
