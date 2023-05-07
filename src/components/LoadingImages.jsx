@@ -13,6 +13,16 @@ const LoadingImages = () => {
       <div className="loader" />
       <div className="loader" />
       <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
+      <div className="loader" />
     </>
   );
 };
